@@ -5,7 +5,7 @@
 
 `d3vNotes` is a markdown repository hosted on Firebase, built with React, Vite, and Tailwind CSS.
 
-**Demo:** [https://d3vNotes.web.app](https://d3vNotes.web.app)
+**Demo:** [https://d3vnotes-ff651.web.app/](https://d3vnotes-ff651.web.app/)
 
 ## Overview
 
