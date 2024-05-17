@@ -71,7 +71,7 @@ npm install
             }
 
             match /docs/{collectionId} {
-                allow write: if request.auth != null && request.auth.uid == collectionId;
+                allow read, write: if request.auth != null && request.auth.uid == collectionId;
             }
         }
     }
