@@ -1,7 +1,7 @@
 
 # d3vNotes
 
-![d3vNotes_demo](https://raw.githubusercontent.com/djiordhan/tamy-md/main/demo/demo.png?token=GHSAT0AAAAAACKNM7NCFRZNIPQPOPLHDQXAZSGEAMA)
+![d3vNotes_demo](https://github.com/djiordhan/d3vNotes/blob/main/demo/demo.png)
 
 `d3vNotes` is a markdown repository hosted on Firebase, built with React, Vite, and Tailwind CSS.
 
