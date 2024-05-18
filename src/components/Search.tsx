@@ -16,14 +16,17 @@ export const Search = () => {
             />
         </div>
         <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full pt-6">
-            {mdList.filter((item: any) => item.raw.toLowerCase().includes(searchText.toLowerCase())).map((item: any, index: number) => (
+            {mdList
+                .map((value, index) => ({ value, index }))
+                .filter(({ value: item }: any) => item.raw.toLowerCase().includes(searchText.toLowerCase()))
+                .map(({ value: item, index }: any, filteredIndex: number) => (
                 <motion.div
                     initial={{ opacity: 0.5, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.3 }}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
-                    key={index} className="bg-cyan-100 p-2 rounded-lg w-full h-50 overflow-hidden cursor-pointer" onClick={() => {
+                    key={filteredIndex} className="bg-cyan-100 p-2 rounded-lg w-full h-50 overflow-hidden cursor-pointer" onClick={() => {
                         onSelect(index);
                     }}>
                     <MarkdownPreview source={item.raw.substring(0, 100) + (item.raw.length > 100 ? "..." : "")} className="p-10" />
