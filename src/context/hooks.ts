@@ -2,6 +2,7 @@ import useIsAuthenticated from "../useIsAuthenticated";
 import { saveData, getData } from '../firebase';
 import { ChangeEvent, useEffect, useState } from "react";
 import { notyf } from "../utils/notification-utils";
+import { saveMarkdownData, getMarkdownData } from '../cache/indexedDB'; 
 
 export interface Markdown {
     raw: string;
@@ -108,7 +109,17 @@ const useMarkdownManager = (): MarkdownManagerHook => {
                 setMdList(data.markdown);
                 setCurrent(0);
                 setCurrentMd(data.markdown[0]?.raw || '');
-            }).catch(console.error);
+                saveMarkdownData(data.markdown);
+            }).catch((error) => {
+                console.error(error);
+                getMarkdownData().then(cachedData => {
+                    if (cachedData) {
+                        setMdList(cachedData);
+                        setCurrent(0);
+                        setCurrentMd(cachedData[0]?.raw || '');
+                    }
+                });
+            });
         }
     }, [user]);
 
