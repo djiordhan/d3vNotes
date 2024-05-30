@@ -14,7 +14,9 @@ export default () => {
     } = useMarkdownManagerContext();
 
     return <div className="flex h-screen">
-        <Sidebar />
+        <div className="hidden md:block">
+            <Sidebar />
+        </div>
         <div className="w-full h-full overflow-scroll" data-color-mode="light">
             <If condition={searchMode}>
                 <Then>

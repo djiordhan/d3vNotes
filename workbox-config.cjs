@@ -1,10 +1,10 @@
 module.exports = {
-    globDirectory: 'build/',
+    globDirectory: 'dist/',
     globPatterns: [
       '**/*.html',
       'assets/**/*.{js,css,png,jpg,svg,gif,webp}'
     ],
-    swDest: 'build/service-worker.js',
+    swDest: 'dist/service-worker.js',
     runtimeCaching: [
       {
         urlPattern: /\.(?:png|jpg|jpeg|svg|gif|webp)$/,

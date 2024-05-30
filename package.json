@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "service-worker": "workbox generateSW workbox-config.js"
+    "service-worker": "workbox generateSW workbox-config.cjs"
   },
   "dependencies": {
     "@uiw/react-markdown-preview": "^5.1.1",

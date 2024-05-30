@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { CancelIcon, CheckIcon, DeleteIcon, PencilIcon } from "../components/Icons";
+import { BackIcon, CancelIcon, CheckIcon, DeleteIcon, PencilIcon } from "../components/Icons";
 import { useMarkdownManagerContext } from "../context/provider";
 import { getName } from "../utils/name-utils";
 const ToolButton = ({ icon, onClick }: any) => {
@@ -20,6 +20,7 @@ export const Tools = ({ name }: any) => {
         doSave,
         doDelete,
         setIsEditing,
+        setSearchMode,
     } = useMarkdownManagerContext();
     
     const hasCurrentIndex = current !== -1 && current !== null;
@@ -31,6 +32,7 @@ export const Tools = ({ name }: any) => {
 
     return <div className="w-full h-15 bg-white p-1 fixed z-50 grid grid-cols-2 gap-4 border-b-2 border-cyan-600">
         <div className="justify-items-start text-cyan-600">
+            <ToolButton icon={<BackIcon />} onClick={() => setSearchMode(true)} />
             {
                 isDirty && hasCurrentIndex &&
                 <ToolButton icon={<CheckIcon />} onClick={doSave} />
